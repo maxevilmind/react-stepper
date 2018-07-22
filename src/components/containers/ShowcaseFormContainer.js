@@ -9,9 +9,9 @@ export class ShowcaseFormContainer extends React.Component {
   render() {
     return (
       <ShowcaseForm
-        updateCurrentStep={this.props.actions.updateCurrentStep}
+        incrementCurrentStep={this.props.actions.incrementCurrentStep}
+        decrementCurrentStep={this.props.actions.decrementCurrentStep}
         currentStep={this.props.currentStep}
-        updateStep={this.props.updateCurrentStep}
       />
     );
   }
@@ -20,16 +20,18 @@ export class ShowcaseFormContainer extends React.Component {
 ShowcaseFormContainer.propTypes = {
   actions: PropTypes.object.isRequired,
   currentStep: PropTypes.number.isRequired,
-  updateCurrentStep: PropTypes.func.isRequired,
+  incrementCurrentStep: PropTypes.func,
+  decrementCurrentStep: PropTypes.func,
+  
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     currentStep: state.stepperShowcase.currentStep
   };
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(actions, dispatch)
   };

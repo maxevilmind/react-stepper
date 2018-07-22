@@ -1,7 +1,6 @@
 import React from 'react';
-import {func, array} from 'prop-types';
+import {number, array} from 'prop-types';
 
-import {fuelSavings} from '../types';
 import styled from 'styled-components'
 
 const Circle = styled.div`
@@ -35,28 +34,52 @@ const Name = styled.div`
     margin-top: -24px;
 `
 
-const Stepper = ({ options }) => (
-  <div style={{display: 'flex', marginTop: '48px'}}>
+const Wrapper = styled.div`
+    display: flex;
+    margin-top: 48px;
+`
+
+const Overlay = styled.div`
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+`
+
+const Segment = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const Stepper = ({ options, currentStep }) => (
+  <Wrapper>
     {options.map(option => {
       return (
-        <div key={option.id} style={{display: 'flex', alignItems: 'center'}}>
+        option.id <= currentStep ?
+        <Segment key={option.id}>
+          {options[0] != option && <Line />}
           <Circle>
             <Name>
               {option.name}
             </Name>
           </Circle>
-          {options[options.length-1] != option && <Line />}
-        </div>
+        </Segment> :
+        <Overlay key={option.id}>
+          <Segment style={{display: 'flex', alignItems: 'center'}}>
+            {options[0] != option && <Line />}
+            <Circle>
+              <Name>
+                {option.name}
+              </Name>
+            </Circle>
+          </Segment>
+        </Overlay>
       );
     })}
-  </div>
+  </Wrapper>
 );
 
 Stepper.propTypes = {
-  onSaveClick: func.isRequired,
-  onChange: func.isRequired,
-  fuelSavings: fuelSavings.isRequired,
-  options: array.isRequired
+  options: array.isRequired,
+  currentStep: number.isRequired,
 };
 
 export default Stepper;

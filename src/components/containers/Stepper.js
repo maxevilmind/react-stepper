@@ -7,9 +7,7 @@ export class StepperContainer extends React.Component {
 
   render() {
     return (
-      <Stepper
-        options={this.props.options}
-      />
+      <Stepper {...this.props}/>
     );
   }
 }
@@ -19,11 +17,11 @@ StepperContainer.propTypes = {
 };
 
 const mapStateToProps = () => {
-
+  return {};
 }
 
 const mapDispatchToProps = () => {
-
+  return {};
 }
 
 export default connect(

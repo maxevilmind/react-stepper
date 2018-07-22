@@ -1,4 +1,4 @@
-import {UPDATE_CURRENT_STEP} from '../constants/actionTypes';
+import {INCREMENT_CURRENT_STEP, DECREMENT_CURRENT_STEP} from '../constants/actionTypes';
 import objectAssign from 'object-assign';
 import initialState from './initialState';
 
@@ -10,10 +10,15 @@ import initialState from './initialState';
 export default function stepperShowcaseReducer(state = initialState.stepperShowcase, action) {
 
   switch (action.type) {
-    case UPDATE_CURRENT_STEP:
+    case INCREMENT_CURRENT_STEP:
       // For this example, just simulating a save by changing date modified.
-      // In a real app using Redux, you might use redux-thunk and handle the async call in fuelSavingsActions.js
-      return objectAssign({}, state, {currentStep: action.newStepId});
+      // In a real app using Redux, you might use redux-thunk and handle the async call
+      return objectAssign({}, state, {currentStep: state.currentStep + 1});
+
+    case DECREMENT_CURRENT_STEP:
+      // For this example, just simulating a save by changing date modified.
+      // In a real app using Redux, you might use redux-thunk and handle the async call
+      return objectAssign({}, state, {currentStep: state.currentStep - 1});
 
 
     default:
