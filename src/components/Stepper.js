@@ -63,7 +63,7 @@ const Stepper = ({ options, currentStep }) => (
           </Circle>
         </Segment> :
         <Overlay key={option.id}>
-          <Segment style={{display: 'flex', alignItems: 'center'}}>
+          <Segment>
             {options[0] != option && <Line />}
             <Circle>
               <Name>

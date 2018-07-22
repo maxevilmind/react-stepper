@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FuelSavingsPage /> should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-bxivhb fCHaAt"
+  >
+    <div
+      className="sc-EHOje hecEEV"
+    >
+      <div
+        className="sc-bdVaJa eHuur"
+      >
+        <div
+          className="sc-htpNat jCVllG"
+        >
+          story
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-EHOje hecEEV"
+    >
+      <div
+        className="sc-bwzfXH bhCsyP"
+      />
+      <div
+        className="sc-bdVaJa eHuur"
+      >
+        <div
+          className="sc-htpNat jCVllG"
+        >
+          to do
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX hcQTVM"
+    >
+      <div
+        className="sc-EHOje hecEEV"
+      >
+        <div
+          className="sc-bwzfXH bhCsyP"
+        />
+        <div
+          className="sc-bdVaJa eHuur"
+        >
+          <div
+            className="sc-htpNat jCVllG"
+          >
+            build
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX hcQTVM"
+    >
+      <div
+        className="sc-EHOje hecEEV"
+      >
+        <div
+          className="sc-bwzfXH bhCsyP"
+        />
+        <div
+          className="sc-bdVaJa eHuur"
+        >
+          <div
+            className="sc-htpNat jCVllG"
+          >
+            test
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX hcQTVM"
+    >
+      <div
+        className="sc-EHOje hecEEV"
+      >
+        <div
+          className="sc-bwzfXH bhCsyP"
+        />
+        <div
+          className="sc-bdVaJa eHuur"
+        >
+          <div
+            className="sc-htpNat jCVllG"
+          >
+            deploy
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    id="button-increment"
+    onClick={[Function]}
+  >
+    next step is 
+    2
+  </button>
+  <button
+    id="button-decrement"
+    onClick={[Function]}
+  >
+    previous step is 
+    0
+  </button>
+</div>
+`;

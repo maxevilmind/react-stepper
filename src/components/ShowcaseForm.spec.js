@@ -21,7 +21,7 @@ describe('<ShowcaseForm />', () => {
     button.simulate('click');
     expect(mockIncrement).toBeCalled();
   });
-  it('should call incrementCurrentStep on decrement button click', () => {
+  it('should call decrementCurrentStep on decrement button click', () => {
     const mockDecrement = jest.fn()
     const wrapper = shallow(<ShowcaseForm
       decrementCurrentStep={mockDecrement}
