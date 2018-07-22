@@ -54,7 +54,7 @@ const Stepper = ({ options, currentStep }) => (
     {options.map(option => {
       return (
         option.id <= currentStep ?
-        <Segment key={option.id}>
+        <Segment key={option.id} id="segment">
           {options[0] != option && <Line />}
           <Circle>
             <Name>
@@ -63,7 +63,7 @@ const Stepper = ({ options, currentStep }) => (
           </Circle>
         </Segment> :
         <Overlay key={option.id}>
-          <Segment>
+          <Segment id="segment">
             {options[0] != option && <Line />}
             <Circle>
               <Name>

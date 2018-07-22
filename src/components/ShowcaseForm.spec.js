@@ -1,15 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ShowcaseForm from './ShowcaseForm';
-import Stepper from './Stepper';
 
 describe('<ShowcaseForm />', () => {
-  it('should contain <Stepper /> component inside <ShowcaseForm />', () => {
+  it('should render', () => {
     const wrapper = shallow(<ShowcaseForm
       currentStep={1}/>
     );
-    const stepper = wrapper.find(Stepper);
-    expect(stepper).not.toBeUndefined();
+    expect(wrapper).not.toBeUndefined();
+  });
+  it('should render 2 buttons', () => {
+    const wrapper = shallow(<ShowcaseForm
+      currentStep={1}/>
+    );
+    const buttons = wrapper.find('button');
+    expect(buttons.length).toBe(2);
   });
   it('should call incrementCurrentStep on increment button click', () => {
     const mockIncrement = jest.fn()
