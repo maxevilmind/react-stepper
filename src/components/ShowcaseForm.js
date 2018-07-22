@@ -1,7 +1,6 @@
 import React from 'react';
-import {func} from 'prop-types';
+import {number, func} from 'prop-types';
 
-import {fuelSavings} from '../types';
 import Stepper from './containers/Stepper'
 
 const options = [
@@ -12,16 +11,16 @@ const options = [
   { id: 5, name: 'deploy' },
 ];
 
-const ShowcaseFormContainer = () => (
-  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+const ShowcaseFormContainer = ({currentStep, updateCurrentStep}) => (
+  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
     <Stepper options={options}/>
+    <button onClick={() => updateCurrentStep(currentStep + 1)}>next step is {currentStep + 1}</button>
   </div>
 );
 
 ShowcaseFormContainer.propTypes = {
-  onSaveClick: func.isRequired,
-  onChange: func.isRequired,
-  fuelSavings: fuelSavings.isRequired
+  currentStep: number.isRequired,
+  updateCurrentStep: func.isRequired,
 };
 
 export default ShowcaseFormContainer;
