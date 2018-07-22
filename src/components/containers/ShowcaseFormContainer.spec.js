@@ -12,7 +12,7 @@ const actions = {
   decrementCurrentStep: jest.fn()
 };
 
-describe("<FuelSavingsPage />", () => {
+describe("<ShowcaseFormContainer />", () => {
   it("should match snapshot", () => {
     const store = configureMockStore()(initialState);
     const component = create(
