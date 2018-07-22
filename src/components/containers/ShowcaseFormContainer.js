@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../../actions/fuelSavingsActions';
-import Stepper from '../Stepper';
+import ShowcaseForm from '../ShowcaseForm';
 
-export class StepperContainer extends React.Component {
+export class ShowcaseFormContainer extends React.Component {
   saveFuelSavings = () => {
     this.props.actions.saveFuelSavings(this.props.fuelSavings);
   }
@@ -16,20 +16,18 @@ export class StepperContainer extends React.Component {
 
   render() {
     return (
-      <Stepper
+      <ShowcaseForm
         onSaveClick={this.saveFuelSavings}
         onChange={this.calculateFuelSavings}
         fuelSavings={this.props.fuelSavings}
-        options={this.props.options}
       />
     );
   }
 }
 
-StepperContainer.propTypes = {
+ShowcaseFormContainer.propTypes = {
   actions: PropTypes.object.isRequired,
-  fuelSavings: PropTypes.object.isRequired,
-  options: PropTypes.array.isRequired
+  fuelSavings: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
@@ -47,4 +45,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(StepperContainer);
+)(ShowcaseFormContainer);

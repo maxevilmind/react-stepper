@@ -1,7 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 import { Route, Switch } from "react-router-dom";
 
-import Stepper from "./Stepper";
+import ShowcaseFormContainer from "./containers/ShowcaseFormContainer";
 import PropTypes from "prop-types";
 import React from "react";
 import { hot } from "react-hot-loader";
@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={Stepper} />
+        <Route exact path="/" component={ShowcaseFormContainer} />
       </Switch>
     );
   }
